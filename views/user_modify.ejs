@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <h3>
-                User 1 adatai
+                <%= (typeof user !== 'undefined') ? user.name + " adatai" : 'Új felhasználó' %>
             </h3>
         </div>
     </div>
@@ -13,14 +13,10 @@
             <form method="POST">
                 <div class="form-group">
                     <label for="name">Név</label>
-                    <input type="text" class="form-control" id="name" placeholder="User name" name="name">
+                    <input type="text" class="form-control" id="name" name="name" value="<%= (typeof user !== 'undefined') ? user.name : '' %>"/>
                 </div>
+                <input type="submit" class="btn btn-primary" value="Kész"/>
             </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="text-right">
-            <button type="button" class="btn btn-default" onclick="location.href='/users/1'">Kész</button>
         </div>
     </div>
 </div>

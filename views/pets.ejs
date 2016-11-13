@@ -27,13 +27,13 @@
                 <% pets.forEach(function (pet) { %>
                 <tr>
                     <td>
-                        <%= pet %>
+                        <%= pet.name %>
                     </td>
                     <td>mosómedve</td>
                     <td>Egy user</td>
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/1/delete'">Törlés</button>
+                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/<%= pet._owner %>/<%= pet.id %>/delete'">Törlés</button>
                             <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
                                 Módosít
                             </button>

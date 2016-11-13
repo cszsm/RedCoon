@@ -9,11 +9,6 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-    	if (typeof req.body === 'undefined') {
-    		console.log('ezitt rossz');
-    		return next();
-    	}
-
     	if (typeof req.body.name === 'undefined') {
     		return next();
     	}

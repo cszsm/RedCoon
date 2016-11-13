@@ -13,11 +13,11 @@ module.exports = function (objectRepository) {
 
     	}, function (err, results) {
     		if (err) {
-    			return next(new Error('Error getting users'));
+    			return next(err);
     		}
 
-        res.tpl.users = results;
-        return next();
+            res.tpl.users = results;
+            return next();
     	});
     };
 };

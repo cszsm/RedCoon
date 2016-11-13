@@ -4,16 +4,16 @@
     <div class="row">
         <div class="col-md-12">
             <h3>
-                User 1 adatai
+                <%= user.name + " adatai" %>
             </h3>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 text-right">
             <button type="button" class="btn btn-default" onclick="location.href='/users'">Vissza</button>
-            <button type="button" class="btn btn-default" onclick="location.href='/users/1/modify'">Módosítás</button>
+            <button type="button" class="btn btn-default" onclick="location.href='/users/<%= user.id %>/modify'">Módosítás</button>
             <button type="button" class="btn btn-default">Törlés</button>
-            <button type="button" class="btn btn-default" onclick="location.href='/pets/1/modify'">Új kisállat</button>
+            <button type="button" class="btn btn-default" onclick="location.href='/pets/<%= user.id %>/new'">Új kisállat</button>
         </div>
     </div>
     <div class="row">
