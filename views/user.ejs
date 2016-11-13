@@ -1,0 +1,59 @@
+<%- include('header') %>
+<div class="container">
+    <%- include('title') %>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                User 1 adatai
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button type="button" class="btn btn-default" onclick="location.href='/users'">Vissza</button>
+            <button type="button" class="btn btn-default" onclick="location.href='/users/1/modify'">Módosítás</button>
+            <button type="button" class="btn btn-default">Törlés</button>
+            <button type="button" class="btn btn-default" onclick="location.href='/pets/1/modify'">Új kisállat</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Faj</th>
+                    <th>Műveletek</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Pet 1</td>
+                    <td>mosómedve</td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/1/delete'">Törlés</button>
+                            <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
+                                Módosít
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pet 2</td>
+                    <td>macskamedve</td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/1/delete'">Törlés</button>
+                            <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
+                                Módosít
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer') %>

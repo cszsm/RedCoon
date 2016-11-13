@@ -1,0 +1,50 @@
+<%- include('header') %>
+<div class="container">
+    <%- include('title') %>
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <a href="/users">
+                <h3> Felhasználók </h3>
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <h3> Kisállatok </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Név</th>
+                    <th>Faj</th>
+                    <th>Gazda</th>
+                    <th>Műveletek</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <% pets.forEach(function (pet) { %>
+                <tr>
+                    <td>
+                        <%= pet %>
+                    </td>
+                    <td>mosómedve</td>
+                    <td>Egy user</td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/1/delete'">Törlés</button>
+                            <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
+                                Módosít
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <% }); %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer') %>

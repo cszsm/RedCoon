@@ -1,0 +1,27 @@
+<%- include('header') %>
+<div class="container">
+    <%- include('title') %>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                User 1 adatai
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <form method="POST">
+                <div class="form-group">
+                    <label for="name">Név</label>
+                    <input type="text" class="form-control" id="name" placeholder="User name" name="name">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-right">
+            <button type="button" class="btn btn-default" onclick="location.href='/users/1'">Kész</button>
+        </div>
+    </div>
+</div>
+<%- include('footer') %>
