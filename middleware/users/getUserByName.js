@@ -1,0 +1,1 @@
+var requireOption = require('../common').requireOption;

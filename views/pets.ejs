@@ -29,12 +29,22 @@
                     <td>
                         <%= pet.name %>
                     </td>
-                    <td>mosómedve</td>
-                    <td>Egy user</td>
+                    <td>
+                        <%= pet.species %>
+                    </td>
+                    <td>
+                        <%= users.filter(function (user) {
+                            return user.id == pet._owner;
+                        })[0].name %>
+                    </td>
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/<%= pet._owner %>/<%= pet.id %>/delete'">Törlés</button>
-                            <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
+                            <button type="button" class="btn btn-danger"
+                                    onclick="location.href='/pets/<%= pet._owner %>/<%= pet.id %>/delete'">
+                                Törlés
+                            </button>
+                            <button type="button" class="btn btn-warning"
+                                    onclick="location.href='/pets/<%= pet._owner %>/<%= pet.id %>/modify'">
                                 Módosít
                             </button>
                         </div>

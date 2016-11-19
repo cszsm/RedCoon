@@ -14,8 +14,6 @@ module.exports = function (objectRepository) {
     		return next();
     	}
 
-        console.log('11111111111');
-
     	var pet = undefined;
     	if (typeof res.tpl.pet !== 'undefined') {
     		pet = res.tpl.pet;
@@ -23,11 +21,9 @@ module.exports = function (objectRepository) {
     		pet = new petModel();
     	}
 
-        console.log('222222222222');
-
     	pet.name = req.body.name;
     	pet.species = req.body.species;
-    	pet._owner = res.tpl.user;
+    	pet._owner = req.body.owner;
 
     	pet.save(function(err, result) {
     		if(err) {

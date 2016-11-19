@@ -33,6 +33,7 @@ module.exports = function (app) {
      */
     app.use('/pets/:userid/:petid/modify',
         getUserMW(objectRepository),
+        getUserListMW(objectRepository),
         getPetMW(objectRepository),
         updatePetMW(objectRepository),
         renderMW('pet_modify')
@@ -52,6 +53,7 @@ module.exports = function (app) {
      */
     app.use('/pets',
         getPetListMW(objectRepository),
+        getUserListMW(objectRepository),
         renderMW('pets')
     );
 };

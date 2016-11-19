@@ -12,7 +12,7 @@
         <div class="col-md-12 text-right">
             <button type="button" class="btn btn-default" onclick="location.href='/users'">Vissza</button>
             <button type="button" class="btn btn-default" onclick="location.href='/users/<%= user.id %>/modify'">Módosítás</button>
-            <button type="button" class="btn btn-default">Törlés</button>
+            <button type="button" class="btn btn-default" onclick="location.href='/users/<%= user.id %>/delete'">Törlés</button>
             <button type="button" class="btn btn-default" onclick="location.href='/pets/<%= user.id %>/new'">Új kisállat</button>
         </div>
     </div>
@@ -27,30 +27,28 @@
                 </tr>
                 </thead>
                 <tbody>
+
+                <% pets.forEach(function (pet) { %>
                 <tr>
-                    <td>Pet 1</td>
-                    <td>mosómedve</td>
+                    <td>
+                        <%= pet.name %>
+                    </td>
+                    <td>
+                        <%= pet.species %>
+                    </td>
                     <td>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/1/delete'">Törlés</button>
-                            <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
+                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/<%= user.id %>/<%= pet.id %>/delete'">
+                                Törlés
+                            </button>
+                            <button type="but" class="btn btn-warning" onclick="location.href='/pets/<%= user.id %>/<%= pet.id %>/modify'">
                                 Módosít
                             </button>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>Pet 2</td>
-                    <td>macskamedve</td>
-                    <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-danger" onclick="location.href='/pets/1/delete'">Törlés</button>
-                            <button type="button" class="btn btn-warning" onclick="location.href='/pets/1/modify'">
-                                Módosít
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+                <% }); %>
+                
                 </tbody>
             </table>
         </div>

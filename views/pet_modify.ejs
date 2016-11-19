@@ -17,13 +17,13 @@
                 </div>
                 <div class="form-group">
                     <label for="owner">Gazda</label>
-                    <select class="form-control" id="owner">
+                    <select class="form-control" id="owner" name="owner">
                         <% users.forEach(function(element) {
 
                             if(element.name == user.name) { %>
-                                <option selected="selected"><%= element.name %></option>
+                                <option selected="selected" value="<%= element.id %>"><%= element.name %></option>
                             <% } else { %>
-                                <option><%= element.name %></option>
+                                <option value="<%= element.id %>"><%= element.name %></option>
                             <% }
                         }); %>
                     </select>

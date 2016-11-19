@@ -5,12 +5,17 @@ var getUserListMW = require('../middleware/users/getUserList');
 var updateUserMW = require('../middleware/users/updateUser');
 var deleteUserMW = require('../middleware/users/deleteUser');
 
+var getPetsByOwnerMW = require('../middleware/pets/getPetsByOwner');
+var deletePetsByOwnerMW = require('../middleware/pets/deletePetsByOwner');
+
 var userModel = require('../models/user');
+var petModel = require('../models/pet');
 
 module.exports = function (app) {
 
     var objectRepository = {
-        userModel: userModel
+        userModel: userModel,
+        petModel: petModel
     };
 
     /**
@@ -34,6 +39,8 @@ module.exports = function (app) {
      * Deletes the user
      */
     app.use('/users/:userid/delete',
+        getPetsByOwnerMW(objectRepository),
+        deletePetsByOwnerMW(objectRepository),
         getUserMW(objectRepository),
         deleteUserMW(objectRepository)
     );
@@ -43,6 +50,7 @@ module.exports = function (app) {
      */
     app.use('/users/:userid',
         getUserMW(objectRepository),
+        getPetsByOwnerMW(objectRepository),
         renderMW('user')
     );
 

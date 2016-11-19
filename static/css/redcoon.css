@@ -1,0 +1,12 @@
+body {
+    background-color: beige;
+    font-family: "Microsoft YaHei UI Light";
+}
+
+.container {
+    width: 60%;
+}
+
+.btn {
+    border-radius: 2px;
+}
